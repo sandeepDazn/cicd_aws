@@ -26,7 +26,7 @@ resource "aws_iam_role" "lambda_execution_role" {
 
 resource "aws_lambda_function" "my_lambda" {
   function_name = "my_lambda_function"
-  role          = aws_iam_role.lambda_execution_role.arn
+  role          = "arn:aws:iam::851725198996:role/lambda_execution_role"
   handler       = "index.handler"
   runtime       = "nodejs14.x" # Change as per your Lambda runtime
   filename      = "lambda.zip" # Zip file of your Lambda code
