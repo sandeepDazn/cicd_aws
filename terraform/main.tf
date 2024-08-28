@@ -30,7 +30,7 @@ resource "aws_lambda_function" "my_lambda" {
   handler       = "index.handler"
   runtime       = "nodejs14.x" # Change as per your Lambda runtime
   filename      = "lambda.zip" # Zip file of your Lambda code
-  source_code_hash = filebase64sha256("lambda.zip")
+  source_code_hash = filebase64sha256("../lambda.zip")
 
   environment {
     variables = {
