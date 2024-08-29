@@ -34,7 +34,6 @@ jobs:
     - name: Deploy with Terraform
       run: |
         cd terraform &&
-        terraform destory
         terraform init
         terraform plan
         terraform apply -auto-approve
