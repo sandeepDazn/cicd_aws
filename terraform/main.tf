@@ -18,6 +18,9 @@ data "aws_iam_policy_document" "assume_role" {
 resource "aws_iam_role" "iam_for_lambda" {
   name               = "iam_for_lambda_testing-00-007"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 data "archive_file" "lambda" {
@@ -42,5 +45,8 @@ resource "aws_lambda_function" "test_lambda" {
     variables = {
       foo = "bar"
     }
+  }
+    lifecycle {
+    create_before_destroy = true
   }
 }
