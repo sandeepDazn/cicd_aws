@@ -26,14 +26,14 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role" "iam_for_lambda" {
-  name               = "iam_for_lambda_testing-00-003"
+  name               = "iam_for_lambda_testing-00-004"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "lambda/index.js"
-  output_path = "ambda_function_payload.zip"
+  source_file = "../lambda/index.js"
+  output_path = "lambda_function_payload.zip"
 }
 
 resource "aws_lambda_function" "test_lambda" {
