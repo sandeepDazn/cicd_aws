@@ -1,16 +1,6 @@
 provider "aws" {
   region = "ap-northeast-1"
 }
-# resource "aws_s3_bucket" "new-bucket" {
-#     bucket = "new-bucket-007-007-111"
-#     tags = {
-#         first = "first tag"
-#         second = "second tag"
-#     }
-# }
-
-# newly added file
-
 
 data "aws_iam_policy_document" "assume_role" {
   statement {
