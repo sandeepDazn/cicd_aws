@@ -37,5 +37,5 @@ jobs:
         terraform init
         terraform plan -out=plan.tfplan
         terraform import
-        terraform apply "plan.tfplan"
+        terraform apply plan.tfplan
         # terraform apply -auto-approve plan.tfplan
