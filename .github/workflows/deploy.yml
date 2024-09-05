@@ -36,4 +36,5 @@ jobs:
         cd terraform &&
         terraform init
         terraform plan
+        terraform import
         terraform apply -auto-approve
