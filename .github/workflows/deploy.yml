@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: '14' # Change as per your runtime
+        node-version: '18' # Change to Node.js 18 as per your runtime in Terraform
 
     - name: Install dependencies
       run: npm install
@@ -37,4 +37,3 @@ jobs:
         terraform init
         terraform plan -out=plan.tfplan
         terraform apply -auto-approve plan.tfplan
-        terraform destroy
